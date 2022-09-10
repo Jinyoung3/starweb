@@ -25,6 +25,16 @@ SPREADSHEET_ID = '1U-CKckKsy56E8ZlMhI50SlW9rm9I5bIbyrlBezqnCGA'
 RANGE_NAME = 'Live to Website!A2:I'
 creds = None
 
+subteams = {
+    "example":"1wmR7i11WlGgfyfEJCJQ5x7z0n-efnkF9NdIbXP8zGQI",
+    "Aerobody":"1_WAtfBhAzA66743nQ8YSFeUlnCR8Xy1p6IWkplD2o5M",
+    "Recovery":"1cGKskTzJl3joE67gIrCHqxpLp-9BaFvi15y_HXWoyIE",
+    "Propulsion":"17bELnmkhbY2GsL5dCVYpsjav4Ld3q8TlFKOnvm821i8",
+    "Telemetry":"1VpdI1m74eq9mEi7xAEVvHYdDSn9_TXshNoCJDDatKS0",
+    "Payload":"1J4ZQYUj1Cn1oOpWweYUzI9rtkUnM-6t8RNxLsU165d8",
+    "Business":"1jbBXa6rZno_4fFMZKyo3eVKVIoh9_ta_4hWVYb13R38"
+}
+
 def main():
     """Shows basic usage of the Sheets API.
     Prints values from a sample spreadsheet.
@@ -36,17 +46,34 @@ def main():
         global creds
         creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json')
 
-    #update_subpage('example')
+    #print(subteams['Telemetry'])
+    update_subpage('Telemetry')
+    update_subpage('example')
     #update_profiles()
 
 def update_subpage(subteam):
     # this links to the example subpage, temporary
-    csv_arr = get_sheet('1wmR7i11WlGgfyfEJCJQ5x7z0n-efnkF9NdIbXP8zGQI', 'Sheet1!A1:E')
+    csv_arr = get_sheet(subteams[subteam], 'Sheet1!A1:E')
+
+    # download banner picture
+    banner_pic_id = get_image_id(csv_arr[0][1])
+    with open('../data/'+subteam+'/'+banner_pic_id+'.jpg', 'wb') as imgfile:
+        imgfile.write(download_file_data(banner_pic_id))
+    csv_arr[0][1] = banner_pic_id
+
+    # download svg
+
+    for i in range(1, len(csv_arr[3])):
+        svg_id = get_image_id(csv_arr[3][i])
+        with open('../data/'+subteam+'/'+svg_id+'.svg', 'wb') as imgfile:
+            imgfile.write(download_file_data(svg_id))
+        csv_arr[3][i] = svg_id
 
     # I know this isn't pythonic but the pythonic way recreates a new 2d array not allowing for modification
     for i in range(1, len(csv_arr[5])):
         proj_id = get_sheet_id(csv_arr[5][i])
         csv_arr[5][i] = proj_id
+
         # itterate through projects
         proj_csv_arr = get_sheet(proj_id, 'Sheet1!A1:Z')
         # itterate through porject pictures
@@ -85,10 +112,10 @@ def get_image_id(image_url):
     return image_url[image_url.index('id=')+3:]
 
 def get_sheet_id(sheet_url):
-    print(sheet_url)
     return sheet_url[sheet_url.index('/d/')+3:sheet_url.index('/d/')+3+44]
 
 def get_sheet(sheet_id, sheet_range):
+    print(sheet_id)
     try:
         service = build('sheets', 'v4', credentials=creds)
 

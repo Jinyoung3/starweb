@@ -9,36 +9,10 @@ const subteam = urlParams.get('subteam');
 var subteamTitle = document.getElementById('subteamTitle');
 subteamTitle.innerHTML = subteam.charAt(0).toUpperCase() + subteam.slice(1);
 
-var contentLink = null
-switch(subteam){
-  case "example":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvJApG4qeafv9Fem-uJStdidvKkZWzrJCHPlWkKlU8U3NccsAcVEs0wXnQRz5Q9TpAdVTLjqx_H4ec/pub?output=csv"
-    break
-  case "Telemetry":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vSTpehiGFAAarmqdIcGVjf5TLM4saabvCXj6_gd3mkbXaDg7-euU7yHenS4cTeQu6d5MfNWgVk6zMzL/pub?output=csv"
-    break
-  case "Recovery":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vT4un_F4P4RBAQo7drxJ4mmxGqrVHmoBiiEKbvyf7ElLCj-4G3rfFWFRFj5dYfTQ0Uw0JOMHNOqM66G/pub?gid=0&single=true&output=csv"
-    break
-  case "Aerobody":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPIZ44JgZwSMHCOPpMVZGJyy1Ab7ffBWgeGVBsTg7w6oTXHg72K-plvCnS8ducQGmqFYZcxw_b0uHB/pub?gid=0&single=true&output=csv"
-    break
-  case "Payload":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vRARzw0QPzC50cKVOZgVC6TMwgSJaANRL_Nt_TFbHTJniyJTO4_24dT23iyPsuqBIkzLzrYFG2JtwbS/pub?gid=0&single=true&output=csv"
-    break
-  case "Propulsion":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vTVXPHxPkwLcT0TC9pO085edsVMl119XrgSRnYsdtD2POew4Uq5kpndNu4O-zr9lZBlkK5ndl81xt3N/pub?gid=0&single=true&output=csv"
-    break
-  case "Business":
-    contentLink="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi1Mxp1-9ccpT5a9N9OSnLIDjkiaYgnxAljsPKD5eHn0u-x_plLvsa5ANBeLMqHAQaj9xD_oZwlv4w/pub?gid=0&single=true&output=csv"
-    break
-  default:
-    alert("this subteam is not real")
-    break
-}
+var contentLink = '../data/'+subteam+'/main.csv'
 
 var content = CSVToArray(loadData(contentLink));
-document.getElementById("banner").style.backgroundImage = "url("+content[0][1]+")";
+document.getElementById("banner").style.backgroundImage = "url(../data/"+subteam+"/"+content[0][1]+".jpg)";
 document.getElementById("tagline").innerHTML=content[1][1];
 document.getElementById("whatwedodescription").innerHTML=content[2][1];
 const profurl = '../data/member_profiles.csv';
@@ -54,7 +28,7 @@ class svgfeatures extends HTMLElement {
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <div class="alt-features-item text-center wow fadeScaleIn animated" data-wow-delay="${i}" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.${i}s; animation-name: fadeScaleIn;">
               <div class="alt-features-icon mx-auto">
-                  <img src=${content[3][i]}>
+                  <img src="../data/${subteam}/${content[3][i]}.svg">
               </div>
               <h3 class="alt-features-title"><br><br></h3>
               <div class="alt-features-descr">
@@ -102,7 +76,7 @@ function createProject(currProject, n){
     while(currProject[2][i] != undefined && currProject[2][i] != ""){
       output +=`
               <li>
-                  <img src="${currProject[2][i]}" alt="" />
+                  <img src="../data/${subteam}/${currProject[2][i]}.jpg" alt="" />
               </li>
               `
       i++
@@ -122,7 +96,7 @@ class myProjects extends HTMLElement {
     var i = 1
     var items = ""
     while(content[5][i] != undefined && content[5][i] != ""){
-      var currProject=CSVToArray(loadData(content[5][i]))
+      var currProject=CSVToArray(loadData('../data/'+subteam+'/'+content[5][i]+'.csv'))
       items += createProject(currProject, i)
       i++;
     }
@@ -148,7 +122,7 @@ function addSubteamLeads(subteam) {
     </div>`
 
   for (let i = 0; i < profarrarr.length - 1; i++) {
-    if (profarrarr[i][2].includes(subteam)) {
+    if (profarrarr[i][2].includes('Telemetry')) {
       html += `
       <!-- Team item -->
         <div class="col-md-3 col-lg-3">
