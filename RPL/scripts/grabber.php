@@ -2,9 +2,9 @@
 <html>
 <body>
 <?php
-$output = shell_exec('grabTeam.py');
+$output = shell_exec('python grabTeam.py');
 echo "<pre>$output</pre>";
-echo "hi";
+echo "done!";
 ?>
 <script>
 //header("location:javascript://history.go(-1)");
