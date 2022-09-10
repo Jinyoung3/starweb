@@ -59,87 +59,29 @@ class myNav extends HTMLElement {
                       <li>
                           <a href="#" class="mn-has-sub">Subteams <i class="mn-has-sub-icon"></i></a>
 
-                          <!-- Sub Multilevel -->
-                          <ul class="mn-sub mn-has-multi to-middle">
+                          <!-- Sub -->
+                          <ul class="mn-sub">
+                            <li>
+                                <a href="subteam.html?subteam=Aerobody">Aerobody </a>
+                            </li>
+                            <li>
+                                <a href="subteam.html?subteam=Recovery">Recovery </a>
+                            </li>
+                            <li>
+                                <a href="subteam.html?subteam=Propulsion">Propulsion </a>
+                            </li>
+                            <li>
+                                <a href="subteam.html?subteam=Telemetry">Telemetry </a>
+                            </li>
+                            <li>
+                                <a href="subteam.html?subteam=Payload">Payload </a>
+                            </li>
+                            <li>
+                                <a href="subteam.html?subteam=Business">Business </a>
 
-                              <li class="mn-sub-multi">
-                                  <a class="mn-group-title">Aero-Body</a>
-
-                                  <ul>
-                                      <li>
-                                          <a href="pages-about-2.html">3D Printed Fin Can Brackets</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-about-1.html">Two Stage Design</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-about-1.html">Simulations</a>
-                                      </li>
-                                  </ul>
-
-                              </li>
-
-                              <li class="mn-sub-multi">
-                                  <a class="mn-group-title">Propulsion</a>
-
-                                  <ul>
-                                      <li>
-                                          <a href="pages-team-1.html">Propellant Mixing</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-team-2.html">Casing Design</a>
-                                      </li>
-                                  </ul>
-
-                              </li>
-
-                              <li class="mn-sub-multi">
-                                  <a class="mn-group-title">Recovery</a>
-
-                                  <ul>
-                                      <li>
-                                          <a href="pages-gallery-1col.html">Recovery Bays</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-gallery-2col.html">Parachutes</a>
-                                      </li>
-                                  </ul>
-
-                              </li>
-
-                              <li class="mn-sub-multi">
-                                  <a class="mn-group-title">Telemetry</a>
-
-                                  <ul>
-                                      <li>
-                                          <a href="pages-gallery-1col.html">PCB Design</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-gallery-2col.html">RF Radios</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-gallery-2col.html">Software</a>
-                                      </li>
-                                  </ul>
-
-                              </li>
-
-                              <li class="mn-sub-multi">
-                                  <a class="mn-group-title">Business & Operations</a>
-
-                                  <ul>
-                                      <li>
-                                          <a href="pages-gallery-1col.html">Emailing Professors</a>
-                                      </li>
-                                      <li>
-                                          <a href="pages-gallery-2col.html">Counting Dollars</a>
-                                      </li>
-                                  </ul>
-
-                              </li>
-
+                            </li>
                           </ul>
-                          <!-- End Sub Multilevel -->
+                          <!-- End Sub -->
 
                       </li>
                       <!-- End Item With Sub -->
@@ -257,6 +199,30 @@ class myFooter extends HTMLElement {
   }
 }
 
+class myRecruitment extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+    <section class="small-section bg-dark light-content">
+        <div class="container relative">
+            <div class="row wow fadeInUpShort animated" style="visibility: visible; animation-name: fadeInUpShort;">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h3 class="call-action-1-heading">Want to join the team?</h3>
+                    <div class="call-action-1-decription mb-60 mb-sm-30">
+                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend lectus. Duis placerat ex gravida nibh tristique ultricies eros lorem blandit.
+                    </div>
+
+                    <div class="local-scroll">
+                        <a href="certification.html" class="btn btn-mod btn-w btn-large btn-round">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    `
+  }
+}
+
+customElements.define('my-recruitment', myRecruitment)
 customElements.define('my-nav', myNav)
 customElements.define('my-newsletter', myNewsletter)
 customElements.define('my-footer', myFooter)
