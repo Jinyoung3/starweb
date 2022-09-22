@@ -12,7 +12,7 @@ function buildTeamItem(data, identifier, col) {
             <div class="wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1.2s">
                 <div class="team-item">
                     <div class="team-item-image">
-                        <img src="images/members/${data[i][6]}.jpg" style="width: 100%; aspect-ratio: 2/3; object-fit: fill;" alt="" />
+                        <img src="data/members/${data[i][6]}.jpg" style="width: 100%; aspect-ratio: 2/3; object-fit: fill;" alt="" />
                         <div class="team-item-detail">
                             <p class="team-item-detail-title">
                                 Hello & Welcome!

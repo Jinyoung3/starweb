@@ -1,5 +1,6 @@
 class myNav extends HTMLElement {
   connectedCallback() {
+    document.head.innerHTML+='<meta name="robots" content="noindex">'
     this.innerHTML = `
       <nav class="main-nav transparent stick-fixed wow-menubar">
           <div class="full-wrapper relative clearfix">

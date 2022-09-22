@@ -7,6 +7,7 @@
 from __future__ import print_function
 
 import os.path
+import shutil
 import io
 import re
 import csv
@@ -46,16 +47,31 @@ def main():
         global creds
         creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json')
 
-    #print(subteams['Telemetry'])
-    update_subpage('Telemetry')
-    update_subpage('example')
-    #update_profiles()
+    folder = '../data'
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+    for t in list(subteams.keys()):
+        update_subpage(t)
+
+    update_profiles()
 
 def update_subpage(subteam):
     # this links to the example subpage, temporary
     csv_arr = get_sheet(subteams[subteam], 'Sheet1!A1:E')
 
     # download banner picture
+    if not os.path.exists('../data/'+subteam):
+        os.makedirs('../data/'+subteam)
+
+    if len(csv_arr[0]) == 1:
+        return
     banner_pic_id = get_image_id(csv_arr[0][1])
     with open('../data/'+subteam+'/'+banner_pic_id+'.jpg', 'wb') as imgfile:
         imgfile.write(download_file_data(banner_pic_id))
@@ -89,10 +105,13 @@ def update_subpage(subteam):
 def update_profiles():
     csv_arr = get_sheet(SPREADSHEET_ID, RANGE_NAME)
 
+    if not os.path.exists('../data/members'):
+        os.makedirs('../data/members')
+
     for row in csv_arr:
         parsed_name = parse_name(row[1])
 
-        with open('../images/members/'+parsed_name+'.jpg', 'wb') as imgfile:
+        with open('../data/members/'+parsed_name+'.jpg', 'wb') as imgfile:
             imgfile.write(download_file_data(real_file_id=get_image_id(row[6])))
         row[6] = parsed_name
 
