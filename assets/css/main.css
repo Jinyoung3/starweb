@@ -3048,7 +3048,15 @@ input[type="button"]:disabled,
 	width: 10em;
 	z-index: 1;
 }
-
+.icon.major.fa-wrench {
+    cursor: pointer;
+  }
+.icon.major.fa-laptop{
+	cursor:pointer;
+}
+.icon.major.fa-code{
+	cursor: pointer;
+}
 .goto-next:before {
 	background-image: url("images/arrow.svg");
 	background-position: center center;
@@ -3585,7 +3593,10 @@ body.landing #header {
 	background-color: #000000;
 	/* Gold color for highlighting */
 }
-
+a.icon.major.fa-usb:hover {
+	color: #009688; /* Specific color for hover */
+	cursor: pointer; /* Cursor to pointer on hover */
+  }
 #banner {
 	background-attachment: fixed;
 	/*background-color: #272833;*/
