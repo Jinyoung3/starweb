@@ -23,14 +23,14 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="http://facebook.com/SpaceTechRU/">News</a></li>
-					<li><a href="index.html#five" class="scrolly">Mailing List</a></li>
+					<li><a href="index.html#five" class="scrolly"></a></li>
 					<li><a href="about.html">About Us / E-Board</a></li>
 					<li>
 						<a href="#">Divisions</a>
 						<ul>
 							<li><a href="ruairborne.html">STARRT</a></li>
 							<li><a href="ruautonomous.html">Weather Balloon</a></li>
-							<li><a href="ruftc.html">Cubesat</a></li>
+							<li><a href="ruftc.html">CubeSat</a></li>
 						</ul>
 					</li>
 					<!-- <li><a href="media.html">Media</a></li> -->
@@ -43,82 +43,91 @@
 		<section id="banner">
 			<div class="content">
 				<header class="major" style="display:inline-block;">
-					<h1 style="font-size: 350%">CubeSat</h1>
+					<h1 style="font-size: 350%">Sloshing Platform for In-orbit Controller Experimentation Satellite (SPICEsat)</h1>
 					<p>Team leads<br>
 						Principal Investigator - Dr. Laurent Burlion<br>
 						Program Manager - Meahan Azmi<br>
-						Chief Engineer - Francesca Fusco<br>
-
-						Payload - Mike Fogel<br>
-						Systems Integration - Spencer Talish<br>
-						Structures - Alex Bryan-Jones<br>
-						Communications - Harris Ransom<br>
-						Power - Jamie Solomon<br>
-						Flight Software - Adil Hydari<br>
-						ADCS - Andrew Yu<br></p>
+						Chief Engineer - Francesca Fusco<br></p>
 				</header>
 			</div>
 			<a href="#one" class="goto-next scrolly">Next</a>
 		</section>
 		<!-- Main Content-->
 		<section id="one" class="wrapper style1 special fade-up">
+			
 			<div class="container">
+				
 				<header class="major">
-					<img src="images/cubesat.jpg" alt="Description of Image" style="margin-top: 210px;">
+					
+					<img src="images/CubeSat.jpg" alt="Description of Image"  class="padded-image">
+					<div class="overlay-text">
+						SPICEsat team with sloshing testbench during Critical Design Review, October 2023
+					  </div>
 					<h3>Rutgers University’s first Cube Satellite Mission: <br>
-
 						Sloshing Platform for In-orbit Controller Experimentation(SPICEsat)<br><br>
-
-						The STAR CubeSat team aims to send Rutgers' first student-built satellite into space. The
-						Sloshing Platform for In-Orbit Controller Experimentation satellite (SPICEsat) will investigate
-						fuel sloshing dynamics in zero-gravity. We aim to design, analyze, and build each system from
-						ground up. Students have the opportunity to work with a team on a real mission alongside
-						professors and industry professionals. The SPICEsat team competed in the 11th cycle of the
-						University Nanosatellite Program (UNP). As of 2024, we reached fulfillment of Phase A, which
-						involved developing a mission concept, beginning construction of an engineering model, and
-						completing six design reviews. If you're interested in space systems and learning more about
-						satellites, check out the CubeSat team!</h3>
+						The STAR CubeSat team aims to send Rutgers University’s first student-built satellite into space. The Sloshing Platform for In-Orbit Controller Experimentation satellite (SPICEsat) will investigate fuel sloshing dynamics in zero-gravity. The goal is to aim to design, build, test, and integrate a novel payload with COTS hardware. Students have the opportunity to work with a team on a real mission alongside professors and industry professionals. Formerly a part of the University Nanosatellite Program, SPICEsat has a well-developed mission concept and is in the process of integration and test of an engineering model.
+					</h3>
 				</header>
 				<div class="box alt">
 					<div class="row gtr-uniform">
 						<section class="col-4 col-6-medium col-12-xsmall">
 							<a href="cubeElectric.html" class="icon alt major fa-usb"></a>
 							<!-- <span class="icon alt major fa-usb"></span> -->
-							<h3>Electrical</h3>
+							<h3>Electrical(Comm&Power)</h3>
 						</section>
 						<section class="col-4 col-6-medium col-12-xsmall">
 							<a href="cubeMech.html" class="icon alt major fa-wrench"></a>
 							<!-- <span class="icon alt major fa-wrench"></span> -->
-							<h3>Mechanical</h3>
+							<h3>Mechanical(Structure&Thermal)</h3>
 						</section>
 						<section class="col-4 col-6-medium col-12-xsmall">
 							<a href="cubeSoft.html" class="icon alt major fa-laptop"></a>
 							<!-- <span class="icon alt major fa-laptop"></span> -->
 							<h3>Software</h3>
 						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<a href="cubePay.html" class="icon alt major fa-rocket"></a>
+							<!-- <span class="icon alt major fa-laptop"></span> -->
+							<h3>Payload</h3>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<a href="cubeSys.html" class="icon alt major fa-sitemap"></a>
+							<!-- <span class="icon alt major fa-laptop"></span> -->
+							<h3>System Integration</h3>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<a href="cubeFly.html" class="icon alt major fa-plane"></a>
+							<!-- <span class="icon alt major fa-laptop"></span> -->
+							<h3>Flight Software</h3>
+						</section>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="two" class="spotlight style1 right" style="background-image:url('images/cubesat.jpg')">
+		<section id="two" class="spotlight style1 right" style="background-image:url('images/CubeSat.jpg')">
 			<div class="content">
 				<header>
-					<h2>Payloads</h2>
+					<h2>Project Overview</h2>
+					<h3>Lead - Mike Fogel</h3>
 				</header>
-				<p> Payloads<br>
-					- Responsible for experimentation and implementation<br>
+				<p> <br>
+					Mission objectives:<br>
+					1) Investigate and characterize the fluid sloshing motion in zero-g environments to validate equivalent mechanical models<br>
+					2) Develop and test control stabilization algorithms to mitigate sloshing more effectively than passive options
+					<p>
+					<!-- - Responsible for experimentation and implementation<br>
 					- Pressure sensors, computer vision, mitigation control algorithm, Arduino<br>
 					Semester goals:<br>
 					Implement software for real-time detection in C++ and MatLab<br>
 					Create Flatsat test bench<br>
-					Prepare for Zero-Gravity Flight!!!
+					Prepare for Zero-Gravity Flight!!! -->
 
 
 				</p>
 			</div>
 		</section>
-		<section id="three" class="spotlight style1 left" style="background-image:url('images/statellite.png')">
+		<!-- <section id="three" class="spotlight style1 left" style="background-image:url('images/statellite.png')">
 			<div class="content">
 				<header>
 					<h2>ADCS</h2>
@@ -130,12 +139,9 @@
 					Semester Goals:<br>
 					-Completion of wiring harness
 					-Verify Reaction Wheel Commands
-
-
-
 				</p>
 			</div>
-		</section>
+		</section> -->
 
 		<footer id="footer">
 			<ul class="copyright">
@@ -144,7 +150,7 @@
 						</span></a></li>
 			</ul>
 			<ul class="copyright">
-				<li>98 Brett Road, Piscataway, NJ 08854 | rutgersaiaa@gmail.com</li>
+				<li>98 Brett Road, Piscataway, NJ 08854 | ruspacetech@gmail.com</li>
 			</ul>
 			<ul class="copyright">
 				<li><a href="sponsors.html">Sponsor Us</a></li>

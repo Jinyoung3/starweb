@@ -348,7 +348,17 @@ pre code {
 .align-right {
 	text-align: right;
 }
-
+.overlay-text {
+	position: absolute;
+	top: 40%; /* Adjust this value to vertically center the text */
+	left: 50%; /* Adjust this value to horizontally center the text */
+	transform: translate(-50%, -50%); /* Center the text precisely */
+	background-color: #fff; /* Set the background color with some transparency */
+	color: #000000; /* Set the text color */
+	padding: 10px; /* Add some padding to the text */
+	font-size: 30px; /* Adjust the font size */
+  /*   text-align: center; /* Center the text horizontally */ */
+{}}
 /* Loader */
 
 @-moz-keyframes spinner-show {
@@ -2555,6 +2565,21 @@ input[type="radio"]+label:before {
 .icon.alt {
 	text-decoration: none;
 }
+.sponsor-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust spacing between images */
+}
+
+.sponsor-images a {
+    flex: 1 1 20%; /* Adjust percentage to fit your needs */
+    margin: 5px; /* Add some margin around each image */
+}
+
+.sponsor-images img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
 
 .icon.alt:before {
 	-moz-osx-font-smoothing: grayscale;
@@ -3690,7 +3715,7 @@ h3 {
 }
 
 #one {
-	margin: 0;
+	margin: 10;
 }
 
 .whoarewe {
@@ -4298,7 +4323,11 @@ h3 {
 	}
 
 }
-
+.padded-image {
+    display: block;
+    margin: 310px auto 0; /* margin-top: 310px, centers the image horizontally */
+    padding: 20px; /* Adjust padding as needed */
+}
 .banner {
 	position: fixed;
 	top: 0;
@@ -4376,7 +4405,7 @@ section {
 	border-bottom-right-radius: 1em;
 	border-bottom-left-radius: 1em;
 	margin-bottom: -1em;
-	background-color: #CCD1CD;
+	background-color: white;
 }
 
 .timeline {

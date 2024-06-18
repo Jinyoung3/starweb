@@ -8,7 +8,7 @@ class aiaaHeader extends HTMLElement {
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="http://facebook.com/SpaceTechRU/">News</a></li>
-                <li><a href="index.html#five" class="scrolly">Mailing List</a></li>
+                <li><a href="index.html#five" class="scrolly"></a></li>
                 <li><a href="about.html">About Us / E-Board</a></li>
                 <li>
                     <a href="#">Divisions</a>
@@ -80,7 +80,7 @@ class aiaaFooter extends HTMLElement {
 						</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>98 Brett Road, Piscataway, NJ 08854 | rutgersaiaa@gmail.com</li>
+						<li>98 Brett Road, Piscataway, NJ 08854 | ruspacetech@gmail.com</li>
 					</ul>
 					<ul class="copyright">
 						<li><a href="sponsors.html">Sponsor Us</a></li>
