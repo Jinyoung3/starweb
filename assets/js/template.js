@@ -1,14 +1,14 @@
 class aiaaHeader extends HTMLElement {
     connectedCallback() {
-        document.head.innerHTML +='<meta name="robots" content="noindex">'
+        document.head.innerHTML += '<meta name="robots" content="noindex">'
         this.innerHTML = `
         <header id="header">
         <h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Rutgers AIAA"></img></a></h1>
         <nav id="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="http://facebook.com/ruaiaa/">News</a></li>
-                <li><a href="index.html#five" class="scrolly">Mailing List</a></li>
+                <li><a href="http://facebook.com/SpaceTechRU/">News</a></li>
+                <li><a href="index.html#five" class="scrolly"></a></li>
                 <li><a href="about.html">About Us / E-Board</a></li>
                 <li>
                     <a href="#">Divisions</a>
@@ -19,7 +19,7 @@ class aiaaHeader extends HTMLElement {
                         <li><a href="http://rpl.rutgers.edu/">RRPL</a></li>
                     </ul>
                 </li>
-                <li><a href="media.html">Media</a></li>
+                <!-- <li><a href="media.html">Media</a></li> -->
                 <li><a href="sponsors.html">Sponsors</a></li>
                 <li><a href="#footer" class="scrolly">Contact Us</a></li>
             </ul>
@@ -47,7 +47,7 @@ class aiaaBanner extends HTMLElement {
                       </a>
                 </div>
                 <div class="col-4">
-                    <a href="http://facebook.com/ruaiaa/">
+                    <a href="http://facebook.com/SpaceTechRU/">
                           <i class="fa fa-facebook-square" aria-hidden="true"></i>
                       </a>
                 </div>
@@ -80,7 +80,7 @@ class aiaaFooter extends HTMLElement {
 						</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>98 Brett Road, Piscataway, NJ 08854 | rutgersaiaa@gmail.com</li>
+						<li>98 Brett Road, Piscataway, NJ 08854 | ruspacetech@gmail.com</li>
 					</ul>
 					<ul class="copyright">
 						<li><a href="sponsors.html">Sponsor Us</a></li>
