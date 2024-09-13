@@ -50,7 +50,7 @@
 			$body.removeClass('is-preload');
 		}, 100);
 		if (window.innerWidth > 980) {
-			var temp = parseInt($(".generalCollage").css("height")) + 100;
+			var temp = parseInt($(".general").css("height")) + 100;
 			$(".gen").css("height", temp);
 		}
 		$('#emailButton').on("click", function () {
