@@ -51,37 +51,25 @@
 
 	<!-- Body Elements -->
 	<!-- Who are we? -->
-	<section id="who-are-we" class="spotlight style1 bottom" style="margin-top: 48px">
-		<div class="content">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 col-12-medium">
-						<h3 class="whorewe" style="font-weight: bold; font-size:32px">Who are we?</h3>
-						<header>
-							<h3>STAR is a Students for the Exploration and Development of Space (SEDS) chapter that
-								gives passionate space explorers the resources they need to explore space now
-								instead of waiting until later. We build space exploring hardware and software, go
-								to conventions/competitions, keep tabs on space politics and business, invite
-								knowledgeable guest speakers, and connect our members to the professional world.
-							</h3>
-						</header>
-					</div>
-				</div>
-			</div>
+	<section id="who-are-we" class="wrapper style1 special fade-up">
+		<div class="container">
+			<header>
+				<h2 class="whorewe" style="font-weight: bold; font-size:32px">Who are we?</h2>
+			</header>
+			<p>
+				STAR is a Students for the Exploration and Development of Space (SEDS) chapter that
+				gives passionate space explorers the resources they need to explore space now
+				instead of waiting until later. We build space exploring hardware and software, go
+				to conventions/competitions, keep tabs on space politics and business, invite
+				knowledgeable guest speakers, and connect our members to the professional world.
+			</p>
 		</div>
 	</section>
 
 	<!-- Images -->
-	<section id="images" class="spotlight style1 bottom gen">
+	<section id="images" class="spotlight style1 over gen">
 		<div class="content">
 			<div class="container generalCollage">
-				<div class="row">
-					<div class="col-12">
-						<header>
-							<h3><br><br><br></h3>
-						</header>
-					</div>
-				</div>
 				<div class="row">
 					<div class="col-4 col-12-xsmall">
 						<img src="resources/images/general/star.jpg" alt="STAR collage image 1">
@@ -103,7 +91,6 @@
 					<div class="col-4 col-12-xsmall">
 						<img src="resources/images/general/star5.jpg" alt="STAR collage image 6">
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -111,7 +98,7 @@
 
 	<!-- Footer -->
 	<footer id="footer">
-		<a href="http://soe.rutgers.edu/" class="copyright">
+		<a href="https://soe.rutgers.edu/" class="copyright">
 			<img src="resources/images/common/soeLogo.png" alt="Rutgers School of Engineering logo" style="height:5em">
 		</a>
 		<p class="copyright">
@@ -161,8 +148,8 @@
 <script>
 	$(document).ready(function () {
 		if (window.outerWidth >= 982) {
-			var height = $('.generalCollage').height();
-			$('#two').height(height + 120);
+			const height = $('.generalCollage').height();
+			$('#images').height(height + 250);
 		}
 	});
 </script>
