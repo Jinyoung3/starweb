@@ -85,7 +85,6 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -234,11 +233,6 @@ h6 {
 	font-weight: 300;
 	line-height: 1em;
 	margin: 0 0 0 0;
-	/*text-shadow:
-    		-1px -1px 0 #000,
-    		1px -1px 0 #000,
-    		-1px 1px 0 #000,
-    		1px 1px 0 #000;*/
 }
 
 .generalCollage {
@@ -357,7 +351,7 @@ pre code {
 	color: #000000; /* Set the text color */
 	padding: 10px; /* Add some padding to the text */
 	font-size: 30px; /* Adjust the font size */
-  /*   text-align: center; /* Center the text horizontally */ */
+  /*   text-align: center; /* Center the text horizontally */
 {}}
 /* Loader */
 
@@ -2295,6 +2289,12 @@ header p {
 	margin: 0 0 1.5em 0;
 }
 
+header h1+p {
+	font-size: 1.5em;
+	margin-top: -1.25em;
+	line-height: 2em;
+}
+
 header h2+p {
 	font-size: 1.25em;
 	margin-top: -1em;
@@ -3253,6 +3253,11 @@ input[type="button"]:disabled,
 
 .spotlight.bottom .content {
 	border-top-width: 0.35em;
+	top: 60%;
+}
+
+.spotlight.over .content {
+	border-top-width: 0.35em;
 	bottom: 0;
 }
 
@@ -3674,6 +3679,11 @@ a.icon.major.fa-usb:hover {
 #banner .content header {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+#banner .content header h1 {
+	font-size: 3em;
+	margin: 0;
 }
 
 #banner .content header h2 {
